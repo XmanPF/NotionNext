@@ -4,14 +4,14 @@ import BLOG from '@/blog.config'
 import CommonScript from '@/components/CommonScript'
 
 class MyDocument extends Document {
-  static async getInitialProps (ctx) {
+  static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
 
-  render () {
+  render() {
     return (
-      <Html lang={BLOG.LANG} className='test'>
+      <Html lang={BLOG.LANG}>
         <Head>
           <link rel='icon' href='/favicon.ico' />
           {/* 谷歌字体镜像 */}
@@ -19,9 +19,9 @@ class MyDocument extends Document {
           <CommonScript />
         </Head>
 
-        <body className={`${BLOG.FONT} bg-day dark:bg-night`}>
-          <Main />
-          <NextScript />
+        <body className={`${BLOG.FONT_STYLE} font-light bg-day dark:bg-night`}>
+            <Main />
+            <NextScript />
         </body>
       </Html>
     )
